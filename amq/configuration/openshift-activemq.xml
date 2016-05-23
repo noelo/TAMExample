@@ -35,7 +35,7 @@
 
     <bean id="mysql-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
       <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-      <property name="url" value="jdbc:mysql://#{systemEnvironment.mysqlhostname}/activemq?relaxAutoCommit=true"/>
+      <property name="url" value="jdbc:mysql://#{systemEnvironment.mysqlhostname}/amqdb?relaxAutoCommit=true"/>
       <!-- <property name="url" value="#{systemProperties.amqusername}"/> -->
       <property name="username" value="#{systemEnvironment.amqusername}"/>
       <property name="password" value="#{systemEnvironment.amqpwd}"/>
