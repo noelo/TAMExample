@@ -19,7 +19,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
            http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
 
-    <!-- JUST CHECKING TO SEE IF THIS WORKED -->
 
     <!-- Allows us to use system properties as variables in this configuration file -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -36,10 +35,10 @@
 
     <bean id="mysql-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
       <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-      <property name="url" value="jdbc:mysql://#{systemProperties.mysqlhostname}/activemq?relaxAutoCommit=true"/>
+      <property name="url" value="jdbc:mysql://#{systemEnvironment.mysqlhostname}/activemq?relaxAutoCommit=true"/>
       <!-- <property name="url" value="#{systemProperties.amqusername}"/> -->
-      <property name="username" value="#{systemProperties.amqusername}"/>
-      <property name="password" value="#{systemProperties.amqpwd}"/>
+      <property name="username" value="#{systemEnvironment.amqusername}"/>
+      <property name="password" value="#{systemEnvironment.amqpwd}"/>
       <property name="poolPreparedStatements" value="true"/>
     </bean>
 
