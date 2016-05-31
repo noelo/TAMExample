@@ -17,6 +17,7 @@ oc new-app openshift/jboss-amq-62~https://github.com/noelo/TAMExample.git --cont
 oc env dc tamexample amqusername=admin
 oc env dc tamexample mysqlhostname=mysql.tamexample.svc.cluster.local
 oc env dc tamexample amqpwd=admin123  
+oc env dc tamexample mysqldb=amqdb
 ```
 
 ### Enable SSL
